@@ -1,0 +1,314 @@
+/* Mobile enhancements for HMS Hotel Management System */
+
+/* Ensure the mobile nav items are more touch-friendly */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
+    margin: 8px 0;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: none;
+  }
+  
+  /* Improved floating theme toggle button */
+  .fixed-toggle {
+    display: flex !important;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #4a6afd 0%, #624bff 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 1050;
+    width: 55px;
+    height: 55px;
+    overflow: visible;
+  }
+  
+  /* Theme toggle label */
+  .toggle-label {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+  }
+  
+  .toggle-label-visible {
+    opacity: 0;
+  }
+  
+  .fixed-toggle:hover .toggle-label-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  
+  /* Enhanced pulse animation */
+  @keyframes gentle-pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+    50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(73, 84, 255, 0.4); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+  }
+  
+  .fixed-toggle:not(:hover) {
+    animation: gentle-pulse 4s infinite;
+  }
+  
+  .fixed-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(73, 84, 255, 0.5);
+  }
+  
+  /* Make sure the sun/moon icon is centered in the button */
+  .fixed-toggle .sun-moon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure navbar collapses properly on mobile */
+  .navbar-collapse {
+    background: linear-gradient(135deg, #4a6afd 0%, #624bff 100%);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  /* Improved login/register buttons on mobile */
+  .navbar-nav.ms-auto .nav-link {
+    margin: 5px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Active state for nav links */
+  .navbar-nav .router-link-active,
+  .navbar-nav .router-link-exact-active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+  }
+}
+
+/* Dark mode specific mobile styles */
+:root[data-theme='dark'] .fixed-toggle {
+  background: linear-gradient(135deg, #3a4a9d 0%, #4a3bcc 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme='dark'] .fixed-toggle:hover {
+  box-shadow: 0 8px 25px rgba(43, 54, 195, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+:root[data-theme='dark'] .toggle-label {
+  background-color: rgba(20, 20, 20, 0.85);
+  color: #f1f3f5;
+}
+
+/* Dark mode mobile navbar */
+@media (max-width: 991.98px) {
+  :root[data-theme='dark'] .navbar-collapse {
+    background: linear-gradient(135deg, #3a4a9d 0%, #4a3bcc 100%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  :root[data-theme='dark'] .navbar-nav .nav-link {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #f1f3f5;
+  }
+  
+  :root[data-theme='dark'] .navbar-nav .nav-link:hover,
+  :root[data-theme='dark'] .navbar-nav .nav-link.active,
+  :root[data-theme='dark'] .navbar-nav .router-link-active,
+  :root[data-theme='dark'] .navbar-nav .router-link-exact-active {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  :root[data-theme='dark'] .navbar-nav.ms-auto .nav-link {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Desktop theme toggle enhancements */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-container:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Desktop theme toggle button - smaller for inline display */
+.d-none.d-lg-flex.theme-toggle-button {
+  margin-left: 0;
+  margin-right: 5px;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+}
+
+.d-none.d-lg-flex.theme-toggle-button:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+  border-color: transparent;
+}
+
+/* Enhanced mobile controls for better tap targets */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+  
+  .form-control,
+  .form-select {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .card-header {
+    padding: 15px;
+  }
+  
+  .feature-card,
+  .room-card {
+    margin-bottom: 15px;
+  }
+  
+  /* Better spacing for mobile forms */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve table responsiveness */
+  .table-responsive {
+    border: none;
+  }
+  
+  /* Better modal sizing on mobile */
+  .modal-dialog {
+    margin: 10px;
+  }
+  
+  /* Hero section mobile adjustments */
+  .hero {
+    min-height: 70vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  /* Features grid mobile optimization */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .features {
+    padding: 2rem 0;
+  }
+}
+
+/* Touch-friendly adjustments for dark mode */
+@media (max-width: 768px) {
+  :root[data-theme='dark'] .btn {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+  }
+  
+  :root[data-theme='dark'] .btn:active {
+    background-color: var(--primary-light);
+    color: white;
+  }
+  
+  :root[data-theme='dark'] .form-control:focus,
+  :root[data-theme='dark'] .form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(74, 106, 253, 0.25);
+  }
+}
+
+/* Smooth transitions between theme changes */
+body,
+.navbar,
+.footer,
+.card,
+.form-control,
+.btn,
+.nav-link,
+.fixed-toggle,
+.feature-card,
+.room-card {
+  transition: background-color 0.5s ease, 
+              color 0.5s ease, 
+              border-color 0.5s ease,
+              box-shadow 0.5s ease;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .fixed-toggle:not(:hover) {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .navbar {
+    border-bottom: 2px solid currentColor;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .card {
+    border: 2px solid currentColor;
+  }
+}

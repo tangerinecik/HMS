@@ -1,0 +1,8 @@
+2025-06-22 21:52:11 - Email already exists - Status: 400 - /api/auth/register - Request: {"email":"gpt.subscripitonaccont@gmail.com","password":"olimpium2005","first_name":"john","last_name":"doe","phone":"647331412","role":"customer"}
+2025-06-22 21:52:40 - Validation failed: First name is required, Last name is required - Status: 400 - /api/auth/register - Request: {
+    "email":  "test@example.com",
+    "phone":  "1234567890",
+    "password":  "password123",
+    "firstName":  "Test",
+    "lastName":  "User"
+}
